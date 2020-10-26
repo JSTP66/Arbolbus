@@ -29,7 +29,7 @@ void inicializarCola(struct cola &q){
     //la que se encarga de recorrer, y recordemos que una cola
     //debe de tener un punto de inicio y un punto final, que quiere decir
     //vamos a ocupar la raiz del arbol como el inicio, y cada uno de los nodos
-    //se vana meter en la cola, para la ramificación y recorrido
+    //se vana meter en la cola, para la ramificaciÃ³n y recorrido
     q.delante = NULL;
     q.atras = NULL;
 }
@@ -233,7 +233,7 @@ int contarHojas(ABB arbol){
         return contarHojas(arbol->izq) + contarHojas(arbol->der);
     }
 }
-void limpiar(){
+void continuar(){
  cout<<"\n\nPresione cualquier tecla";
         getch();
 }
@@ -259,17 +259,18 @@ int main(){
  case 1:
              cout<<"Ingresa el numero de nodos del arbol\n";
              cin>>n;
-            cout<<endl;
+             cout<<endl;
             for(int i = 0; i<n; i++){
              cout<<"Ingrese el nodo "<<i+1<<" : ";
-             cin>>x;}
+             cin>>x;
+			 }
              insertar(arbol, x);
- limpiar();
+ continuar();
  break;
  case 2:
   cout<<"\n El arbol es: \n\n";
-      verArbol(arbol, x);
- limpiar();
+      verArbol(arbol, n);
+ continuar();
  break;
  case 3:
  int opc1;
@@ -305,7 +306,7 @@ int main(){
         }
      }while(opc1);
          break;
- limpiar();
+ continuar();
  case 4:
     cout<<"\n\n Ingresa el datos a buscar:";
             cin>>dato;
@@ -314,38 +315,39 @@ int main(){
             }
             else
                 cout<<"Dato no existe"; 
- limpiar();
+ continuar();
  break;
  case 5:
  int datoE;
  cout<<"Ingrese el dato a eliminar: ";
  cin>>datoE;
  eliminar(arbol,datoE);
- limpiar();
+ continuar();
  break;
  case 6:
  cout<<"\nRecorriendo el arbol... \n\n";
             recorrerNiveles(arbol);
+            continuar();
  break;
  case 7:
  cout<<"\nLa altura del arbol es:  \n\n";
  cout<<alturaABB(arbol);
- limpiar();
+ continuar();
  break;
  case 8:
  arbolEspejo(arbol);
- limpiar(); 
+ continuar(); 
  break;
  case 9:
  cout<<contarHojas(arbol);
- limpiar(); 
+ continuar(); 
  break;
  case 10:
  int dato12; 
   cout<<"Ingrese el valor del dato";
   cin>>dato12;
   nodosMenoresQueK(arbol,dato12);
- limpiar();
+ continuar();
  break;
  case 11:
  exit(0);
